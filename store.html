@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
   <link rel="icon" href="Images/apple-favicon.png">
   <link rel="stylesheet" href="store.css">
 </head>
+
 <body>
   <div class="navbar">
     <div>
@@ -22,16 +24,21 @@
       <div><a href="">Accessories</a></div>
       <div><a href="">Support</a></div>
       <div class="search-container">
-        <a href=""><div class="search"></div></a>
+        <a href="">
+          <div class="search"></div>
+        </a>
       </div>
       <div class="cart-container">
-        <a href=""><div class="cart"></div></a>
+        <a href="">
+          <div class="cart"></div>
+        </a>
       </div>
     </div>
   </div>
 
   <div class="EMI-offer">
-    <span>Get up to 6 months of No Cost EMI § plus up to ₹10000.00 instant cashback<sup>§§</sup> on selected products with eligible cards.</span>
+    <span>Get up to 6 months of No Cost EMI § plus up to ₹10000.00 instant cashback<sup>§§</sup> on selected products
+      with eligible cards.</span>
     <a href="">See offers</a>
   </div>
 
@@ -49,11 +56,13 @@
     </div>
   </header>
 
+  <!-- Categories Section -->
   <div class="category">
     <div>
       <div class="cat-img">
-        <div id="back-btn" class="no-transition scroll-btn">
-          <svg width="44" height="44" viewBox="-2 -3 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <div id="back-btn" class="back-btn no-transition scroll-btn">
+          <svg width="44" height="44" viewBox="-2 -3 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
             <polyline points="15 18 9 12 15 6"></polyline>
           </svg>
         </div>
@@ -97,8 +106,9 @@
     </div>
     <div>
       <div class="cat-img">
-        <div id="next-btn" class="scroll-btn">
-          <svg width="44" height="44" viewBox="-4 -3 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"     stroke-linejoin="round">
+        <div id="next-btn" class="next-btn scroll-btn">
+          <svg width="44" height="44" viewBox="-4 -3 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
             <polyline points="9 18 15 12 9 6"></polyline>
           </svg>
         </div>
@@ -106,102 +116,55 @@
     </div>
   </div>
 
+  <!-- Latest Section -->
   <div class="category-header">
     <span>The latest.</span>
     <span>Take a look at what’s new right now.</span>
   </div>
-  <div class="latest-items">
-    <div id="latest-back-btn" class="scroll-btn hidden">
-          <svg width="44" height="44" viewBox="-2 -3 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="15 18 9 12 15 6"></polyline>
-          </svg>
+  <div class="ctg-container">
+    <div id="latest-back-btn" class="scroll-btn back-btn hidden">
+      <svg width="44" height="44" viewBox="-2 -3 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+        stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
     </div>
-    <div>
-      <div class="white" style="background-image:url(Images/store-card-iphone-17-pro.jpg);">
-        <div>iPhone 17 Pro</div>
-        <div>All out Pro.</div>
-        <div>From &#8377;134900.00<sup>‡</sup></div>
-        <div class="last-child">Add to Bag</div>
-      </div>
+    <div class="latest-items ctg-scrolling">
+      
     </div>
-    <div>
-      <div class="white" style="background-image:url(Images/store-card-macbook-pro.jpg);">
-        <div>MacBook Pro 14"</div>
-        <div>Supercharged by M5.</div>
-        <div>From &#8377;169900.00<sup>‡</sup></div>
-        <div class="last-child">Add to Bag</div>
-      </div>
-    </div>
-    <div>
-      <div style="background-image:url(Images/store-card-iphone-air.jpg);">
-        <div>iPhone Air</div>
-        <div>The thinnest iPhone ever.</div>
-        <div>From &#8377;119900.00<sup>‡</sup></div>
-        <div class="last-child">Add to Bag</div>
-      </div>
-    </div>
-    <div>
-      <div class="white" style="background-image:url(Images/store-card-ipad-pro.jpg);">
-        <div>iPad Pro</div>
-        <div>Mmmmm. Power.</div>
-        <div>From &#8377;99900.00<sup>‡</sup></div>
-        <div class="last-child">Add to Bag</div>
-      </div>
-    </div>
-    <div>
-      <div style="background-image:url(Images/store-card-iphone-17.jpg);">
-        <div>iPhone 17</div>
-        <div>Magichromatic.</div>
-        <div>From &#8377;82900.00<sup>‡</sup></div>
-        <div class="last-child">Add to Bag</div>
-      </div>
-    </div>
-    <div>
-      <div style="background-image:url(Images/store-card-watch-s.jpg);">
-        <div>Apple Watch Series 11</div>
-        <div>The ultimate way to watch your health.</div>
-        <div>From &#8377;46900.00<sup>‡</sup></div>
-        <div class="last-child">Add to Bag</div>
-      </div>
-    </div>
-    <div>
-      <div style="background-image:url(Images/store-card-watch-se.jpg);">
-        <div>Apple Watch SE 3</div>
-        <div>Walk it. Talk it. Track it. Love it.</div>
-        <div>From &#8377;25900.00<sup>‡</sup></div>
-        <div class="last-child">Add to Bag</div>
-      </div>
-    </div>
-    <div>
-      <div class="white" style="background-image:url(Images/store-card-watch-ultra.jpg);">
-        <div>Apple Watch Ultra 3</div>
-        <div>Personal beast.</div>
-        <div>From &#8377;89900.00<sup>‡</sup></div>
-        <div class="last-child">Add to Bag</div>
-      </div>
-    </div>
-    <div>
-      <div style="background-image:url(Images/store-card-airpods-pro.jpg);">
-        <div>AirPods Pro 3</div>
-        <div>The World's best in-ear.</div>
-        <div>From &#8377;25900.00<sup>‡</sup></div>
-        <div class="last-child">Add to Bag</div>
-      </div>
-    </div>
-    <div style="width: 680px;">
-      <div style="background-image:url(Images/explore-accessories.png);">
-        <div style="font-size: 28px; font-family: SF-pro-regular;">Explore iphone <br>accessories.</div>
-      </div>
-    </div>
-    <div id="latest-next-btn" class="scroll-btn">
-          <svg width="44" height="44" viewBox="-4 -3 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"     stroke-linejoin="round">
-            <polyline points="9 18 15 12 9 6"></polyline>
-          </svg>
+    <div id="latest-next-btn" class="scroll-btn next-btn">
+      <svg width="44" height="44" viewBox="-4 -3 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+        stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
     </div>
   </div>
 
-  <div class="space" style="height: 100vh;"></div>
+  <!-- Help Section -->
+  <div class="category-header">
+    <span>Help is here.</span>
+    <span>Whenever and however you need it.</span>
+  </div>
+  <div class="ctg-container">
+    <div id="help-back-btn" class="scroll-btn back-btn hidden">
+      <svg width="44" height="44" viewBox="-2 -3 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+        stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </div>
+    <div class="help-section ctg-scrolling">
+    </div>
+    <div id="help-next-btn" class="scroll-btn next-btn">
+      <svg width="44" height="44" viewBox="-4 -3 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+        stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </div>
+  </div>
 
+
+  
+  <script src="Data/data.js"></script>
   <script src="store.js"></script>
 </body>
+
 </html>
