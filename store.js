@@ -1,106 +1,46 @@
+let updateButtonVisibility = (ctg,back,next,L,R) => {
+  let maxScroll = ctg.scrollWidth - ctg.clientWidth;
+
+  if(ctg.scrollLeft <= L){
+    back.classList.add('hidden');
+    next.classList.remove('hidden');
+  } else if(ctg.scrollLeft >= maxScroll-R){
+    next.classList.add('hidden');
+    back.classList.remove('hidden');
+  } else{
+    back.classList.remove('hidden');
+    next.classList.remove('hidden');
+  }
+}
+
+document.querySelectorAll('.back-btn')
+  .forEach( backBtn =>{
+    const ctg = document.querySelector(`.${backBtn.dataset.ctg}`);
+    backBtn.addEventListener('click', () => {
+     ctg.scrollLeft -= 251;
+    });
+});
+document.querySelectorAll('.next-btn')
+  .forEach( nextBtn =>{
+    const ctg = document.querySelector(`.${nextBtn.dataset.ctg}`);
+    nextBtn.addEventListener('click', () => {
+     ctg.scrollLeft += 251;
+    });
+});
+
 // Category-ScrollBar
 let categoryScroll = document.querySelector('.category');
 let backBtn = document.getElementById('back-btn');
 let nextBtn = document.getElementById('next-btn');
 
-let updateButtonVisibility = () => {
-  let maxScroll = categoryScroll.scrollWidth - categoryScroll.clientWidth;
-
-  if(categoryScroll.scrollLeft <= 40){
-    backBtn.classList.add('hidden');
-    nextBtn.classList.remove('hidden');
-
-  } else if(categoryScroll.scrollLeft >= maxScroll-41){
-    nextBtn.classList.add('hidden');
-    backBtn.classList.remove('hidden');
-  }
-}
-
-updateButtonVisibility();
+updateButtonVisibility(categoryScroll,backBtn,nextBtn,40,41);
 
 requestAnimationFrame(()=>{
   backBtn.classList.remove('no-transition')
-})
-
-categoryScroll.addEventListener('scroll',updateButtonVisibility);
-
-nextBtn.addEventListener('click', () => {
-  categoryScroll.scrollLeft += 251;
-});
-backBtn.addEventListener('click', () => {
-  categoryScroll.scrollLeft -= 251;
 });
 
-// Latest Items Scroll bar
-
-let latestScroll = document.querySelector('.latest-items');
-let latestBackBtn = document.getElementById('latest-back-btn');
-let latestNextBtn = document.getElementById('latest-next-btn');
-
-let updateLatestBtnVisibility = () => {
-  let latestMaxScroll = latestScroll.scrollWidth - latestScroll.clientWidth;
-
-  if(latestScroll.scrollLeft <= 200){
-    latestBackBtn.classList.add('hidden');
-  }
-  else if(latestScroll.scrollLeft >= latestMaxScroll-165){
-    latestNextBtn.classList.add('hidden');
-  }
-  else{
-    latestBackBtn.classList.remove('hidden');
-    latestNextBtn.classList.remove('hidden');
-  }
-}
-
-updateButtonVisibility();
-
-requestAnimationFrame(()=>{
-  latestBackBtn.classList.remove('no-transition')
-})
-
-latestScroll.addEventListener('scroll',updateLatestBtnVisibility);
-
-latestNextBtn.addEventListener('click', () => {
-  latestScroll.scrollLeft += 251;
-});
-latestBackBtn.addEventListener('click', () => {
-  latestScroll.scrollLeft -= 251;
-});
-
-// Help Scroll bar
-
-let helpScroll = document.querySelector('.help-section');
-let helpBackBtn = document.getElementById('help-back-btn');
-let helpNextBtn = document.getElementById('help-next-btn');
-
-let updateHelpBtnVisibility = () => {
-  let helpMaxScroll = helpScroll.scrollWidth - helpScroll.clientWidth;
-
-  if(helpScroll.scrollLeft <= 250){
-    helpBackBtn.classList.add('hidden');
-  }
-  else if(helpScroll.scrollLeft >= helpMaxScroll-60){
-    helpNextBtn.classList.add('hidden');
-  }
-  else{
-    helpBackBtn.classList.remove('hidden');
-    helpNextBtn.classList.remove('hidden');
-  }
-}
-
-updateHelpBtnVisibility();
-
-requestAnimationFrame(()=>{
-  helpBackBtn.classList.remove('no-transition')
-})
-
-helpScroll.addEventListener('scroll',updateHelpBtnVisibility);
-
-helpNextBtn.addEventListener('click', () => {
-  helpScroll.scrollLeft += 251;
-});
-helpBackBtn.addEventListener('click', () => {
-  helpScroll.scrollLeft -= 251;
+categoryScroll.addEventListener('scroll',()=>{
+  updateButtonVisibility(categoryScroll,backBtn,nextBtn,40,41);
 });
 
 // Latest Items Data
@@ -114,26 +54,151 @@ latestProducts.forEach((latest)=>{
         <div>${latest.itemName}</div>
         <div>${latest.itemTagline}</div>
         <div>From &#8377;${latest.itemPrice}<sup>‡</sup></div>
-        <div class="last-child">Add to Bag</div>
+        <div class="last-child js-add-to-bag" data-product-name="${latest.itemName}">Add to Bag</div>
       </div>
     </div>
   `;
 });
 document.querySelector('.latest-items').innerHTML = latestHTML;
 
+// Latest Items Scroll bar
+
+let latestScroll = document.querySelector('.latest-items');
+let latestBackBtn = document.getElementById('latest-back-btn');
+let latestNextBtn = document.getElementById('latest-next-btn');
+
+updateButtonVisibility(latestScroll,latestBackBtn,latestNextBtn,200,165);
+
+requestAnimationFrame(()=>{
+  latestBackBtn.classList.remove('no-transition')
+});
+
+latestScroll.addEventListener('scroll',()=>{
+  updateButtonVisibility(latestScroll,latestBackBtn,latestNextBtn,200,165);
+});
+
 // Help Section Data
 
 let helpHTML = '';
 
-HelpSection.forEach((help)=>{
+helpSection.forEach((help)=>{
   helpHTML += `
     <div>
-        <div class="${help.textColor}" style="background-image:url(${help.img});">
-          <div>${help.head}</div>
-          <div>${help.subHead}</div>
-          <div class="ctg-tag">${help.tag}</div>
-        </div>
+      <div class="${help.textColor}" style="background-image:url(${help.img});">
+        <div>${help.head}</div>
+        <div>${help.subHead}</div>
+        <div class="ctg-tag">${help.tag}</div>
       </div>
+    </div>
   `;
 });
 document.querySelector('.help-section').innerHTML = helpHTML;
+
+// Help Scroll bar
+
+let helpScroll = document.querySelector('.help-section');
+let helpBackBtn = document.getElementById('help-back-btn');
+let helpNextBtn = document.getElementById('help-next-btn');
+
+updateButtonVisibility(helpScroll,helpBackBtn,helpNextBtn,250,60);
+
+requestAnimationFrame(()=>{
+  helpBackBtn.classList.remove('no-transition')
+});
+
+helpScroll.addEventListener('scroll',() => {
+  updateButtonVisibility(helpScroll,helpBackBtn,helpNextBtn,250,60);
+});
+
+
+// Accessories Data
+
+let accesHTML = '';
+
+accessories.forEach(acces => {
+  accesHTML +=`
+    <div>
+      <div style="background-color: white;" class="product">
+        <div>
+          <div class="prod-img">
+            <div style="background-image: url(${acces.img});"></div>
+          </div>
+          <div class="prod-detail">
+            <div class="acces-atb js-add-to-bag" data-product-name="${acces.name}">Add to Bag</div> 
+            <div>${acces.tag}</div>
+            <div>${acces.name}</div>
+            <div>MRP ${acces.price} (Incl. of all taxes)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+});
+document.querySelector('.acces-section').innerHTML = accesHTML;
+
+// Accessories Scroll bar
+
+let accesScroll = document.querySelector('.acces-section');
+let accesBackBtn = document.getElementById('acces-back-btn');
+let accesNextBtn = document.getElementById('acces-next-btn');
+
+updateButtonVisibility(accesScroll,accesBackBtn,accesNextBtn,160,158);
+
+requestAnimationFrame(()=>{
+  accesBackBtn.classList.remove('no-transition')
+});
+
+accesScroll.addEventListener('scroll',() => {
+  updateButtonVisibility(accesScroll,accesBackBtn,accesNextBtn,160,158);
+});
+
+// Sound Data
+
+let soundHTML = '';
+
+sound.forEach(sound => {
+  soundHTML +=`
+    <div>
+      <div style="background-color: white;" class="product">
+        <div>
+          <div class="prod-img">
+            <div style="background-image: url(${sound.img});"></div>
+          </div>
+          <div class="prod-detail">
+            <div class="acces-atb js-add-to-bag" data-product-name="${sound.name}">Add to Bag</div> 
+            <div>${sound.tag}</div>
+            <div>${sound.name}</div>
+            <div>MRP ${sound.price} (Incl. of all taxes)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+});
+document.querySelector('.sound-section').innerHTML = soundHTML;
+
+// Sound scroll bar
+
+
+let soundScroll = document.querySelector('.sound-section');
+let soundBackBtn = document.getElementById('sound-back-btn');
+let soundNextBtn = document.getElementById('sound-next-btn');
+
+updateButtonVisibility(soundScroll,soundBackBtn,soundNextBtn,160,158);
+
+requestAnimationFrame(()=>{
+  soundBackBtn.classList.remove('no-transition')
+});
+
+soundScroll.addEventListener('scroll',() => {
+  updateButtonVisibility(soundScroll,soundBackBtn,soundNextBtn,160,158);
+});
+
+/////
+
+document.querySelectorAll('.js-add-to-bag')
+  .forEach(btn => {
+    btn.addEventListener('click',()=>{
+      console.log(btn.dataset.productName);
+    })
+});

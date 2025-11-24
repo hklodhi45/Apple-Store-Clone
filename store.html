@@ -56,11 +56,11 @@
     </div>
   </header>
 
-  <!-- Categories Section -->
+<!-- Categories Section -->
   <div class="category">
     <div>
       <div class="cat-img">
-        <div id="back-btn" class="back-btn no-transition scroll-btn">
+        <div id="back-btn" class="back-btn no-transition scroll-btn" data-ctg="category">
           <svg width="44" height="44" viewBox="-2 -3 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
             stroke-linecap="round" stroke-linejoin="round">
             <polyline points="15 18 9 12 15 6"></polyline>
@@ -106,7 +106,7 @@
     </div>
     <div>
       <div class="cat-img">
-        <div id="next-btn" class="next-btn scroll-btn">
+        <div id="next-btn" class="next-btn scroll-btn" data-ctg="category">
           <svg width="44" height="44" viewBox="-4 -3 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
             stroke-linecap="round" stroke-linejoin="round">
             <polyline points="9 18 15 12 9 6"></polyline>
@@ -116,22 +116,22 @@
     </div>
   </div>
 
-  <!-- Latest Section -->
+<!-- Latest Section -->
   <div class="category-header">
     <span>The latest.</span>
     <span>Take a look at what’s new right now.</span>
   </div>
   <div class="ctg-container">
-    <div id="latest-back-btn" class="scroll-btn back-btn hidden">
+    <div id="latest-back-btn" class="scroll-btn back-btn hidden" data-ctg="latest-items">
       <svg width="44" height="44" viewBox="-2 -3 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
         stroke-linecap="round" stroke-linejoin="round">
         <polyline points="15 18 9 12 15 6"></polyline>
       </svg>
     </div>
     <div class="latest-items ctg-scrolling">
-      
+
     </div>
-    <div id="latest-next-btn" class="scroll-btn next-btn">
+    <div id="latest-next-btn" class="scroll-btn next-btn" data-ctg="latest-items">
       <svg width="44" height="44" viewBox="-4 -3 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
         stroke-linecap="round" stroke-linejoin="round">
         <polyline points="9 18 15 12 9 6"></polyline>
@@ -139,21 +139,68 @@
     </div>
   </div>
 
-  <!-- Help Section -->
+<!-- Help Section -->
   <div class="category-header">
     <span>Help is here.</span>
     <span>Whenever and however you need it.</span>
   </div>
   <div class="ctg-container">
-    <div id="help-back-btn" class="scroll-btn back-btn hidden">
+    <div id="help-back-btn" class="scroll-btn back-btn hidden" data-ctg="help-section">
       <svg width="44" height="44" viewBox="-2 -3 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
         stroke-linecap="round" stroke-linejoin="round">
         <polyline points="15 18 9 12 15 6"></polyline>
       </svg>
     </div>
     <div class="help-section ctg-scrolling">
+
     </div>
-    <div id="help-next-btn" class="scroll-btn next-btn">
+    <div id="help-next-btn" class="scroll-btn next-btn" data-ctg="help-section">
+      <svg width="44" height="44" viewBox="-4 -3 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+        stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </div>
+  </div>
+
+<!-- Accessories -->
+  <div class="category-header">
+    <span>Accessories.</span>
+    <span>Essentials that pair perfectly with your favourite devices.</span>
+  </div>
+  <div class="ctg-container">
+    <div id="acces-back-btn" class="scroll-btn back-btn hidden" data-ctg="acces-section">
+      <svg width="44" height="44" viewBox="-2 -3 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+        stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </div>
+    <div class="acces-section ctg-scrolling">
+
+    </div>
+    <div id="acces-next-btn" class="scroll-btn next-btn" data-ctg="acces-section">
+      <svg width="44" height="44" viewBox="-4 -3 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+        stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </div>
+  </div>
+
+<!-- sound Section -->
+  <div class="category-header">
+    <span>Loud and clear.</span>
+    <span>Unparalleled choices for rich, high-quality sound.</span>
+  </div>
+  <div class="ctg-container">
+    <div id="sound-back-btn" class="scroll-btn back-btn hidden" data-ctg="sound-section">
+      <svg width="44" height="44" viewBox="-2 -3 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+        stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </div>
+    <div class="sound-section acces-section ctg-scrolling">
+
+    </div>
+    <div id="sound-next-btn" class="scroll-btn next-btn" data-ctg="sound-section">
       <svg width="44" height="44" viewBox="-4 -3 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
         stroke-linecap="round" stroke-linejoin="round">
         <polyline points="9 18 15 12 9 6"></polyline>
@@ -162,7 +209,6 @@
   </div>
 
 
-  
   <script src="Data/data.js"></script>
   <script src="store.js"></script>
 </body>

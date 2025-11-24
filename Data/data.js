@@ -55,7 +55,7 @@ const latestProducts = [{
 }];
 
 
-const HelpSection = [{
+const helpSection = [{
   img:'Images/shop-video-call.jpg',
   head:'Shop with a Specialist over video.',
   subHead:'Choose your next device in a guded, one-way video session.',
@@ -98,3 +98,92 @@ const HelpSection = [{
   tag:'WATCH AND LEARN',
   textColor:''
 }];
+
+const accessories = [{
+  img:'Images/Acce-techWoven-case.jpg',
+  tag:'New',
+  name:'iPhone 17 Pro Max TechWoven Case with MagSafe - Blue',
+  price:'₹5900.00'
+},{
+  img:'Images/Acce-Silicon-case.jpg',
+  tag:'New',
+  name:'iPhone 17 Pro Silicone Case with MagSafe – Orange',
+  price:'₹4900.00'
+},{
+  img:'Images/Acce-Magic-keyboard.jpg',
+  tag:'New Colour',
+  name:'Magic Keyboard for iPad Air 13" (M3) - US English - Black',
+  price:'₹29900.00'
+},{
+  img:'Images/Acce-crossbody-strap.jpg',
+  tag:'New',
+  name:'Crossbody Strap - Light Blue',
+  price:'₹5900.00'
+},{
+  img:'Images/Acce-Bumper.jpg',
+  tag:'New',
+  name:'iPhone Air Bumper - Light Blue',
+  price:'₹3900.00'
+},{
+  img:'Images/Acce-sport-loop.jpg',
+  tag:'New',
+  name:'46mm Neon Yellow Sport Loop',
+  price:'₹4500.00'
+},{
+  img:'Images/Acce-sport-band.jpg',
+  tag:'New',
+  name:'46mm Anchor Blue Sport Band - M/L',
+  price:'₹4500.00'
+},{
+  img:'Images/Acce-magsafe.jpg',
+  tag:'New',
+  name:'iPhone Air MagSafe Battery',
+  price:'₹11900.00'
+},{
+  img:'Images/Acce-magsafe-charger.jpg',
+  tag:'New',
+  name:'MagSafe Charger (2m)',
+  price:'₹5500.00'
+}]
+
+const sound = [{
+  img:'Images/sound-airpods-pro-3.jpg',
+  tag:'New',
+  name:'AirPods Pro 3',
+  price:'₹25900.00'
+},{
+  img:'Images/sound-airpods-4-anc.jpg',
+  tag:' ',
+  name:'AirPods 4 with Active Noise Cancellation',
+  price:'₹17900.00'
+},{
+  img:'Images/sound-powerbeats-fit.jpg',
+  tag:'New',
+  name:'Powerbeats Fit - Wireless Fitness Earbuds with Secure...',
+  price:'₹24900.00'
+},{
+  img:'Images/sound-airpods-max.jpg',
+  tag:'New colours',
+  name:'AirPods Max - Midnight',
+  price:'₹59900.00'
+},{
+  img:'Images/sound-homepod-select.jpg',
+  tag:' ',
+  name:'HomePod - Midnight',
+  price:'₹32900.00'
+},{
+  img:'Images/sound-powerbeats-pro-2.jpg',
+  tag:'',
+  name:'Powerbeats Pro 2 - High-Performance Earbuds-...',
+  price:'₹29900.00'
+},{
+  img:'Images/sound-homepod-mini.jpg',
+  tag:'',
+  name:'HomePod mini - Orange',
+  price:'₹10900.00'
+},{
+  img:'Images/sound-beats-pill.jpg',
+  tag:'',
+  name:'Beats Pill - Wireless <br>Bluetooth<sup>&reg;</sup> Speaker -...',
+  price:'₹10900.00'
+}]
