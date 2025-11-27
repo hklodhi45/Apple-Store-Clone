@@ -1,3 +1,5 @@
+import {bag,addToBag} from '../Data/bag.js';
+
 let updateButtonVisibility = (ctg,back,next,L,R) => {
   let maxScroll = ctg.scrollWidth - ctg.clientWidth;
 
@@ -50,11 +52,11 @@ let latestHTML = '';
 latestProducts.forEach((latest)=>{
   latestHTML += `
     <div>
-      <div class="${latest.textColor}" style="background-image:url(${latest.itemImg});">
-        <div>${latest.itemName}</div>
-        <div>${latest.itemTagline}</div>
-        <div>From &#8377;${latest.itemPrice}<sup>‡</sup></div>
-        <div class="last-child js-add-to-bag" data-product-name="${latest.itemName}">Add to Bag</div>
+      <div class="${latest.textColor}" style="background-image:url(${latest.img});">
+        <div>${latest.name}</div>
+        <div>${latest.tagline}</div>
+        <div>From &#8377;${latest.price}<sup>‡</sup></div>
+        <div class="last-child js-add-to-bag" data-product-id="${latest.productId}">Add to Bag</div>
       </div>
     </div>
   `;
@@ -124,7 +126,7 @@ accessories.forEach(acces => {
             <div style="background-image: url(${acces.img});"></div>
           </div>
           <div class="prod-detail">
-            <div class="acces-atb js-add-to-bag" data-product-name="${acces.name}">Add to Bag</div> 
+            <div class="acces-atb js-add-to-bag" data-product-id="${acces.productId}">Add to Bag</div> 
             <div>${acces.tag}</div>
             <div>${acces.name}</div>
             <div>MRP ${acces.price} (Incl. of all taxes)</div>
@@ -165,7 +167,7 @@ sound.forEach(sound => {
             <div style="background-image: url(${sound.img});"></div>
           </div>
           <div class="prod-detail">
-            <div class="acces-atb js-add-to-bag" data-product-name="${sound.name}">Add to Bag</div> 
+            <div class="acces-atb js-add-to-bag" data-product-id="${sound.productId}">Add to Bag</div> 
             <div>${sound.tag}</div>
             <div>${sound.name}</div>
             <div>MRP ${sound.price} (Incl. of all taxes)</div>
@@ -194,11 +196,29 @@ soundScroll.addEventListener('scroll',() => {
   updateButtonVisibility(soundScroll,soundBackBtn,soundNextBtn,160,158);
 });
 
-/////
+// Cart quantity update
+const bagQtyElement = document.querySelector('.bag-qty');
+bagQtyElement.innerHTML = 0;
 
+const updateBagQty = () => {
+  let bagQty = 0;
+    bag.forEach(product => {
+      bagQty += product.quantity;
+    });
+  bagQtyElement.innerHTML = bagQty;
+}
 document.querySelectorAll('.js-add-to-bag')
   .forEach(btn => {
     btn.addEventListener('click',()=>{
-      console.log(btn.dataset.productName);
-    })
+      bagQtyElement.classList.remove('transparent');
+      const productId = btn.dataset.productId;
+      addToBag(productId);
+      updateBagQty();
+      console.log(bag);
+    });
 });
+
+if(bagQtyElement.innerHTML == 0){
+  bagQtyElement.classList.add('transparent');
+}
+

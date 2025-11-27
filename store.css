@@ -1,6 +1,7 @@
 :root{
   --dark:#1d1d1f;
   --gray:#6E6E73;
+  --light:#f5f5f7;
 }
 @font-face {
   font-family: SF-pro-thin;
@@ -43,7 +44,7 @@
   padding: 0;
 }
 body{
-  background-color: #f5f5f7;
+  background-color: var(--light);
   color: var(--dark);
 }
 a{
@@ -59,7 +60,7 @@ a{
   font-size: 12px;
   font-weight: 400;
   letter-spacing: 0.8px;
-  background-color: #f5f5f7;
+  background-color: var(--light);
 }
 .navbar > div{
   width: 996px;
@@ -94,7 +95,7 @@ a{
     width: 8px;
     border: 2px solid #0c0c0ccc;
     border-radius: 20px;
-    background-color: white;
+    background-color: var(--light);
     z-index: 2;
     transition: border-color 0.6s ease;
   }
@@ -119,7 +120,7 @@ a{
   }
     
 /* cart bag */
-  .cart-container{
+  .bag-container{
     height: 16px;
     width: 16px;
     display: flex;
@@ -130,7 +131,7 @@ a{
     right: 6px;
     bottom: 1px;
   }
-  .cart{
+  .bag{
     position: relative;
     height: 10px;
     width: 10px;
@@ -141,10 +142,10 @@ a{
     justify-content: center;
     transition: border-color 0.6s ease;
   }
-  .cart:hover{
+  .bag:hover{
     border-color: #1d1d1f;
   }
-  .cart::before{
+  .bag::before{
     content: '';
     position: absolute;
     height: 4px;
@@ -159,9 +160,23 @@ a{
     transform: rotate(45deg);
     transition: border-color 0.6s ease;
   }
-  .cart:hover::before{
+  .bag:hover::before{
     border-top-color: black;
     border-left-color: black;
+  }
+  .bag-qty{
+    position: absolute;
+    color:var(--light);
+    background-color: var(--dark);
+    padding: 1px 4px;
+    border-radius: 9px;
+    font-size: 10px;
+    top: 8px;
+    left: 6px;
+  }
+  .transparent{
+    background-color: transparent !important;
+    color: transparent !important;
   }
 
 .EMI-offer{
