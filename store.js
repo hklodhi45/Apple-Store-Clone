@@ -1,4 +1,5 @@
-import {bag,addToBag} from '../Data/bag.js';
+import {bag,addToBag} from './Data/bag.js';
+import { latestProducts,accessories,sound,helpSection } from "./Data/data.js";
 
 let updateButtonVisibility = (ctg,back,next,L,R) => {
   let maxScroll = ctg.scrollWidth - ctg.clientWidth;
@@ -55,7 +56,7 @@ latestProducts.forEach((latest)=>{
       <div class="${latest.textColor}" style="background-image:url(${latest.img});">
         <div>${latest.name}</div>
         <div>${latest.tagline}</div>
-        <div>From &#8377;${latest.price}<sup>‡</sup></div>
+        <div>From ₹${latest.price}<sup>‡</sup></div>
         <div class="last-child js-add-to-bag" data-product-id="${latest.productId}">Add to Bag</div>
       </div>
     </div>
@@ -129,7 +130,7 @@ accessories.forEach(acces => {
             <div class="acces-atb js-add-to-bag" data-product-id="${acces.productId}">Add to Bag</div> 
             <div>${acces.tag}</div>
             <div>${acces.name}</div>
-            <div>MRP ${acces.price} (Incl. of all taxes)</div>
+            <div>MRP ₹${acces.price} (Incl. of all taxes)</div>
           </div>
         </div>
       </div>
@@ -170,7 +171,7 @@ sound.forEach(sound => {
             <div class="acces-atb js-add-to-bag" data-product-id="${sound.productId}">Add to Bag</div> 
             <div>${sound.tag}</div>
             <div>${sound.name}</div>
-            <div>MRP ${sound.price} (Incl. of all taxes)</div>
+            <div>MRP ₹${sound.price} (Incl. of all taxes)</div>
           </div>
         </div>
       </div>
@@ -198,7 +199,11 @@ soundScroll.addEventListener('scroll',() => {
 
 // Cart quantity update
 const bagQtyElement = document.querySelector('.bag-qty');
-bagQtyElement.innerHTML = 0;
+let bagQty = 0;
+bag.forEach(product => {
+      bagQty += product.quantity;
+});
+bagQtyElement.innerHTML = bagQty;
 
 const updateBagQty = () => {
   let bagQty = 0;
@@ -207,6 +212,7 @@ const updateBagQty = () => {
     });
   bagQtyElement.innerHTML = bagQty;
 }
+
 document.querySelectorAll('.js-add-to-bag')
   .forEach(btn => {
     btn.addEventListener('click',()=>{
@@ -214,11 +220,9 @@ document.querySelectorAll('.js-add-to-bag')
       const productId = btn.dataset.productId;
       addToBag(productId);
       updateBagQty();
-      console.log(bag);
     });
 });
 
 if(bagQtyElement.innerHTML == 0){
   bagQtyElement.classList.add('transparent');
 }
-

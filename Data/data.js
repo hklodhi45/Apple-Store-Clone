@@ -1,4 +1,4 @@
-const latestProducts = [{
+export const latestProducts = [{
   productId: 'hk45-clone-apple-latest-01',
   textColor: 'white',
   img: 'Images/store-card-iphone-17-pro.jpg',
@@ -64,7 +64,7 @@ const latestProducts = [{
 }];
 
 
-const helpSection = [{
+export const helpSection = [{
   img:'Images/shop-video-call.jpg',
   head:'Shop with a Specialist over video.',
   subHead:'Choose your next device in a guded, one-way video session.',
@@ -108,108 +108,108 @@ const helpSection = [{
   textColor:''
 }];
 
-const accessories = [{
+export const accessories = [{
   productId: 'hk45-clone-apple-acces-01',
   img:'Images/Acce-techWoven-case.jpg',
   tag:'New',
   name:'iPhone 17 Pro Max TechWoven Case with MagSafe - Blue',
-  price:'₹5900.00'
+  price:'5900.00'
 },{
   productId: 'hk45-clone-apple-acces-02',
   img:'Images/Acce-Silicon-case.jpg',
   tag:'New',
   name:'iPhone 17 Pro Silicone Case with MagSafe – Orange',
-  price:'₹4900.00'
+  price:'4900.00'
 },{
   productId: 'hk45-clone-apple-acces-03',
   img:'Images/Acce-Magic-keyboard.jpg',
   tag:'New Colour',
   name:'Magic Keyboard for iPad Air 13" (M3) - US English - Black',
-  price:'₹29900.00'
+  price:'29900.00'
 },{
   productId: 'hk45-clone-apple-acces-04',
   img:'Images/Acce-crossbody-strap.jpg',
   tag:'New',
   name:'Crossbody Strap - Light Blue',
-  price:'₹5900.00'
+  price:'5900.00'
 },{
   productId: 'hk45-clone-apple-acces-05',
   img:'Images/Acce-Bumper.jpg',
   tag:'New',
   name:'iPhone Air Bumper - Light Blue',
-  price:'₹3900.00'
+  price:'3900.00'
 },{
   productId: 'hk45-clone-apple-acces-06',
   img:'Images/Acce-sport-loop.jpg',
   tag:'New',
   name:'46mm Neon Yellow Sport Loop',
-  price:'₹4500.00'
+  price:'4500.00'
 },{
   productId: 'hk45-clone-apple-acces-07',
   img:'Images/Acce-sport-band.jpg',
   tag:'New',
   name:'46mm Anchor Blue Sport Band - M/L',
-  price:'₹4500.00'
+  price:'4500.00'
 },{
   productId: 'hk45-clone-apple-acces-08',
   img:'Images/Acce-magsafe.jpg',
   tag:'New',
   name:'iPhone Air MagSafe Battery',
-  price:'₹11900.00'
+  price:'11900.00'
 },{
   productId: 'hk45-clone-apple-acces-09',
   img:'Images/Acce-magsafe-charger.jpg',
   tag:'New',
   name:'MagSafe Charger (2m)',
-  price:'₹5500.00'
+  price:'5500.00'
 }]
 
-const sound = [{
+export const sound = [{
   productId: 'hk45-clone-apple-sound-01',
   img:'Images/sound-airpods-pro-3.jpg',
   tag:'New',
   name:'AirPods Pro 3',
-  price:'₹25900.00'
+  price:'25900.00'
 },{
   productId: 'hk45-clone-apple-sound-02',
   img:'Images/sound-airpods-4-anc.jpg',
   tag:' ',
   name:'AirPods 4 with Active Noise Cancellation',
-  price:'₹17900.00'
+  price:'17900.00'
 },{
   productId: 'hk45-clone-apple-sound-03',
   img:'Images/sound-powerbeats-fit.jpg',
   tag:'New',
   name:'Powerbeats Fit - Wireless Fitness Earbuds with Secure...',
-  price:'₹24900.00'
+  price:'24900.00'
 },{
   productId: 'hk45-clone-apple-sound-04',
   img:'Images/sound-airpods-max.jpg',
   tag:'New colours',
   name:'AirPods Max - Midnight',
-  price:'₹59900.00'
+  price:'59900.00'
 },{
   productId: 'hk45-clone-apple-sound-05',
   img:'Images/sound-homepod-select.jpg',
   tag:' ',
   name:'HomePod - Midnight',
-  price:'₹32900.00'
+  price:'32900.00'
 },{
   productId: 'hk45-clone-apple-sound-06',
   img:'Images/sound-powerbeats-pro-2.jpg',
   tag:'',
   name:'Powerbeats Pro 2 - High-Performance Earbuds-...',
-  price:'₹29900.00'
+  price:'29900.00'
 },{
   productId: 'hk45-clone-apple-sound-07',
   img:'Images/sound-homepod-mini.jpg',
   tag:'',
   name:'HomePod mini - Orange',
-  price:'₹10900.00'
+  price:'10900.00'
 },{
   productId: 'hk45-clone-apple-sound-08',
   img:'Images/sound-beats-pill.jpg',
   tag:'',
   name:'Beats Pill - Wireless <br>Bluetooth<sup>&reg;</sup> Speaker -...',
-  price:'₹10900.00'
+  price:'10900.00'
 }]
