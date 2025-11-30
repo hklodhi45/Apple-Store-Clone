@@ -1,6 +1,7 @@
 import {bag,addToBag} from './Data/bag.js';
 import { latestProducts,accessories,sound,helpSection } from "./Data/data.js";
 
+// Controls the visibility of back and next buttons
 let updateButtonVisibility = (ctg,back,next,L,R) => {
   let maxScroll = ctg.scrollWidth - ctg.clientWidth;
 
@@ -16,15 +17,32 @@ let updateButtonVisibility = (ctg,back,next,L,R) => {
   }
 }
 
+// Generates HTML and assigns back-navigation behavior to .back-btn elements
 document.querySelectorAll('.back-btn')
   .forEach( backBtn =>{
+    backBtn.innerHTML = `
+      <svg width="44" height="44" viewBox="-2 -3 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+        stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    `;
+
     const ctg = document.querySelector(`.${backBtn.dataset.ctg}`);
     backBtn.addEventListener('click', () => {
      ctg.scrollLeft -= 251;
     });
 });
+
+// Generates HTML and assigns forward-navigation behavior to .next-btn elements
 document.querySelectorAll('.next-btn')
   .forEach( nextBtn =>{
+    nextBtn.innerHTML = `
+      <svg width="44" height="44" viewBox="-4 -3 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+        stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    `;
+
     const ctg = document.querySelector(`.${nextBtn.dataset.ctg}`);
     nextBtn.addEventListener('click', () => {
      ctg.scrollLeft += 251;
@@ -46,8 +64,7 @@ categoryScroll.addEventListener('scroll',()=>{
   updateButtonVisibility(categoryScroll,backBtn,nextBtn,40,41);
 });
 
-// Latest Items Data
-
+// Generates HTML for Latest Section
 let latestHTML = '';
 
 latestProducts.forEach((latest)=>{
@@ -64,8 +81,7 @@ latestProducts.forEach((latest)=>{
 });
 document.querySelector('.latest-items').innerHTML = latestHTML;
 
-// Latest Items Scroll bar
-
+// Latest Section Scroll bar
 let latestScroll = document.querySelector('.latest-items');
 let latestBackBtn = document.getElementById('latest-back-btn');
 let latestNextBtn = document.getElementById('latest-next-btn');
@@ -80,8 +96,7 @@ latestScroll.addEventListener('scroll',()=>{
   updateButtonVisibility(latestScroll,latestBackBtn,latestNextBtn,200,165);
 });
 
-// Help Section Data
-
+// Generates HTML for Helo Section
 let helpHTML = '';
 
 helpSection.forEach((help)=>{
@@ -97,8 +112,7 @@ helpSection.forEach((help)=>{
 });
 document.querySelector('.help-section').innerHTML = helpHTML;
 
-// Help Scroll bar
-
+// Help Section Scroll bar
 let helpScroll = document.querySelector('.help-section');
 let helpBackBtn = document.getElementById('help-back-btn');
 let helpNextBtn = document.getElementById('help-next-btn');
@@ -114,8 +128,7 @@ helpScroll.addEventListener('scroll',() => {
 });
 
 
-// Accessories Data
-
+// Generates HTML for Accessories Section
 let accesHTML = '';
 
 accessories.forEach(acces => {
@@ -139,7 +152,7 @@ accessories.forEach(acces => {
 });
 document.querySelector('.acces-section').innerHTML = accesHTML;
 
-// Accessories Scroll bar
+// Accessories Section Scroll bar
 
 let accesScroll = document.querySelector('.acces-section');
 let accesBackBtn = document.getElementById('acces-back-btn');
@@ -155,8 +168,7 @@ accesScroll.addEventListener('scroll',() => {
   updateButtonVisibility(accesScroll,accesBackBtn,accesNextBtn,160,158);
 });
 
-// Sound Data
-
+// Generates HTML for Sound Section
 let soundHTML = '';
 
 sound.forEach(sound => {
@@ -180,9 +192,7 @@ sound.forEach(sound => {
 });
 document.querySelector('.sound-section').innerHTML = soundHTML;
 
-// Sound scroll bar
-
-
+// Sound Section scroll bar
 let soundScroll = document.querySelector('.sound-section');
 let soundBackBtn = document.getElementById('sound-back-btn');
 let soundNextBtn = document.getElementById('sound-next-btn');
@@ -197,7 +207,7 @@ soundScroll.addEventListener('scroll',() => {
   updateButtonVisibility(soundScroll,soundBackBtn,soundNextBtn,160,158);
 });
 
-// Cart quantity update
+// Update cart quantity
 const bagQtyElement = document.querySelector('.bag-qty');
 let bagQty = 0;
 bag.forEach(product => {
@@ -213,6 +223,7 @@ const updateBagQty = () => {
   bagQtyElement.innerHTML = bagQty;
 }
 
+// Add to bag button functionality
 document.querySelectorAll('.js-add-to-bag')
   .forEach(btn => {
     btn.addEventListener('click',()=>{
@@ -223,6 +234,7 @@ document.querySelectorAll('.js-add-to-bag')
     });
 });
 
-if(bagQtyElement.innerHTML == 0){
+// Hide the bag quantity container when quantity is 0
+if(Number(bagQtyElement.innerHTML) === 0){
   bagQtyElement.classList.add('transparent');
 }

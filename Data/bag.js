@@ -40,7 +40,7 @@ export const addToBag = productId => {
 
 let bagItemsContainerHTML;
 
-// function for searching product by Id
+// function to search product by Id
 let match;
 const searchProductById = bagItemId =>{
   latestProducts.forEach(item => {
@@ -57,7 +57,7 @@ const searchProductById = bagItemId =>{
   });
 }
 
-// Check Bag Quantity Status function - Main function for bag.html page
+// Generates the .bag-item-container HTML based on current bag quantities
 const checkBagQtyStatus = () => {
   let bagItemsListContainerHTML = '';
   let bagQty = 0;
