@@ -76,7 +76,7 @@ const checkBagQtyStatus = () => {
       <div class="empty-bag-subhead">Sign in to see if you have any saved items. Or continue shopping.
       </div>
       <button class="sign-in-btn empty-bag-btn">Sign In</button>
-      <a href="/store.html"><button class="continue-btn empty-bag-btn">Continue Shopping</button></a>
+      <a href="store.html"><button class="continue-btn empty-bag-btn">Continue Shopping</button></a>
     </div>`;
     document.querySelector('.bag-items-container').innerHTML = bagItemsContainerHTML;
   } else {
@@ -93,7 +93,7 @@ const checkBagQtyStatus = () => {
       bagTotal += Number(match.price * bagItem.quantity);
       bagItemsListContainerHTML += `
         <div>
-          <div style="background-image: url(/${match.img});">
+          <div style="background-image: url(${match.img});">
           </div>
           <div class="bag-prod-detail">
             <div>
@@ -114,8 +114,8 @@ const checkBagQtyStatus = () => {
           <div class="bag-delhivery-detail">
             <div>
               <div>Find out how soon you can get this item. <a href=""> Enter pin code</a></div>
-              <div><img src="/Images/delhivery-truck.png" alt=""> In stock and ready to ship.</div>
-              <div><img src="/Images/apple-store-pick.png" alt=""> Pick up at an Apple Store near you.</div>
+              <div><img src="Images/delhivery-truck.png" alt=""> In stock and ready to ship.</div>
+              <div><img src="Images/apple-store-pick.png" alt=""> Pick up at an Apple Store near you.</div>
             </div>
           </div>
         </div>
