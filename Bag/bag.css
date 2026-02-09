@@ -265,3 +265,112 @@ select{
   text-decoration: underline;
 }
 
+.displayNone{
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+
+  .EMI-offer{
+    height: 100px;
+  }
+  .EMI-offer>div{
+    width: 80vw;
+  }
+  .empty-bag-sub-container{
+    width: 90%;
+  }
+  .empty-bag-head,.total-head>div{
+  font-size: 25px;
+  }
+  .empty-bag-btn{
+    width: 100%;
+  }
+  .continue-btn{
+    margin: 20px 0px 0px;
+  }
+  .check-out{
+    width: 85vw;
+  }
+
+  .bag-items-list-container{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .bag-items-list-container>div{
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .bag-items-list-container>div>div:first-child{
+    width: 60%;
+    height: 270px;
+    margin-bottom: 30px;
+    margin-top: -20px;
+  }
+  .bag-prod-detail{
+    width: 100%;
+  }
+  .bag-prod-detail>div:first-child{
+  font-size: 21px;
+  grid-template-rows: 50px 50px;
+  grid-template-columns: 70% auto;
+  margin: 0px;
+  }
+  .bag-prod-detail>div>span:last-child{
+    grid-area: 2/2/3/3;
+  }
+  .bag-prod-detail>div>span:nth-child(2){
+    grid-area: 1/2/2/3;
+    text-align: right;
+  }
+  select{
+    background-color: white;
+  }
+  .bag-prod-detail>div:nth-child(2){
+   font-size: 13px;
+  }
+  .bag-prod-detail>div:last-child{
+   margin:30px 0px 30px;
+  }
+
+  .bag-delhivery-detail>div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 120px;
+  }
+
+  .checkout-container{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    border: none;
+  }
+  .checkout-container>div{
+    width: 80%;
+  }
+  .subtotal-shipping{
+    border-top: 1px solid #D2D2D7;
+    padding-top: 15px;
+  }
+  .total>div:first-child>span{
+   font-size: 20px;
+  }
+  .total>div:last-child>span{
+   font-size: 13px;
+  }
+  .checkout-container>div>div:nth-child(3){
+    font-size: 13px;
+  }
+
+  .help-num>div{
+    width: 80%;
+    text-align: left;
+  }
+  }

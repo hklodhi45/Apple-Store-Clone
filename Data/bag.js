@@ -71,7 +71,7 @@ const checkBagQtyStatus = () => {
   if (bagQty === 0) {
     bagQtyElement.classList.add('transparent');
     bagItemsContainerHTML = `
-    <div>
+    <div class="empty-bag-sub-container">
       <div class="empty-bag-head">Your bag is empty.</div>
       <div class="empty-bag-subhead">Sign in to see if you have any saved items. Or continue shopping.
       </div>
@@ -189,3 +189,13 @@ export const removeFromBag = index => {
 
 // expose helper to the global scope so inline handlers can call it
 window.removeFromBag = removeFromBag;
+
+
+const viewportWidth = window.innerWidth;
+let navbarHTML = document.querySelector('.navbar');
+if(viewportWidth <= 600){
+  document.querySelectorAll('.menubar-ctg')
+  .forEach(menubarCtgElement => {
+    menubarCtgElement.classList.add('displayNone');
+  });
+}

@@ -96,7 +96,7 @@ latestScroll.addEventListener('scroll',()=>{
   updateButtonVisibility(latestScroll,latestBackBtn,latestNextBtn,200,165);
 });
 
-// Generates HTML for Helo Section
+// Generates HTML for Help Section
 let helpHTML = '';
 
 helpSection.forEach((help)=>{
@@ -237,4 +237,42 @@ document.querySelectorAll('.js-add-to-bag')
 // Hide the bag quantity container when quantity is 0
 if(Number(bagQtyElement.innerHTML) === 0){
   bagQtyElement.classList.add('transparent');
+}
+
+
+// navbar content
+
+const viewportWidth = window.innerWidth;
+
+let navbarContent;
+if(viewportWidth <= 600){
+  navbarContent = `
+   <div>
+      <div><a href=""><img class="logo-img" src="Images/apple-logo.png" alt="logo"></a></div>
+      <div class="search-bag"> 
+        <div class="search-container">
+        <a href="">
+          <div class="search"></div>
+        </a>
+        </div>
+        <div class="bag-container">
+          <a href="bag.html">
+            <div class="bag"></div>
+          </a>
+        </div>
+        <div class="menubars-container">
+          <a href="">
+            <div class="menubars">
+             <div class="bar bar1"></div>
+             <div class="bar bar2"></div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    `;
+  
+  let navbarHTML = document.querySelector('.navbar');
+
+navbarHTML.innerHTML = navbarContent;
 }
