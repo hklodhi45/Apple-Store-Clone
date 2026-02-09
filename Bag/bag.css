@@ -369,8 +369,12 @@ select{
     font-size: 13px;
   }
 
+  .help-num{
+    justify-content: left;
+    padding-left: 10vw;
+  }
   .help-num>div{
-    width: 80%;
+    width: 70%;
     text-align: left;
   }
   }
